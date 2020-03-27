@@ -15,7 +15,7 @@ import java.util.UUID;
  * Date: 27/03/20
  * Time: 07.49
  */
-public class FakeUserDataProfile {
+public class FakeUserProfileDataStore {
     private static final List<UserProfile> USER_PROFILE = new ArrayList<>();
 
     static {
