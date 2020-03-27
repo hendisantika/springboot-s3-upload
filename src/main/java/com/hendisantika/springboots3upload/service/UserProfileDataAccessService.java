@@ -26,6 +26,6 @@ public class UserProfileDataAccessService {
     }
 
     List<UserProfile> getUserProfiles() {
-        return fakeUserDataProfileDataStore.getUserProfile();
+        return fakeUserDataProfileDataStore.getUserProfiles();
     }
 }

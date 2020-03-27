@@ -10,7 +10,7 @@ package com.hendisantika.springboots3upload.bucket;
  * Time: 07.30
  */
 public enum BucketName {
-    PROFILE_IMAGE("hendi-image-upload");
+    PROFILE_IMAGE("hendi-image-upload-123");
 
     private final String bucketName;
 
