@@ -1,7 +1,13 @@
 package com.hendisantika.springboots3upload.controller;
 
+import com.hendisantika.springboots3upload.profile.UserProfile;
+import com.hendisantika.springboots3upload.service.UserProfileService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,4 +21,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/v1/user-profile")
 public class UserProfileController {
+    private final UserProfileService userProfileService;
+
+    @Autowired
+    public UserProfileController(UserProfileService userProfileService) {
+        this.userProfileService = userProfileService;
+    }
+
+    @GetMapping
+    public List<UserProfile> getUserProfiles() {
+        return userProfileService.getUserProfiles();
+    }
 }
