@@ -3,6 +3,7 @@ package com.hendisantika.springboots3upload.controller;
 import com.hendisantika.springboots3upload.profile.UserProfile;
 import com.hendisantika.springboots3upload.service.UserProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ import java.util.UUID;
  */
 @RestController
 @RequestMapping("api/v1/user-profile")
+@CrossOrigin("*")
 public class UserProfileController {
     private final UserProfileService userProfileService;
 
