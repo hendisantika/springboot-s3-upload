@@ -6,6 +6,7 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,11 +21,17 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class AWSConfig {
+    @Value("${aws.access.key}")
+    private String awsAccessKey;
+
+    @Value("${aws.secret.key}")
+    private String awsSecretKey;
+
     @Bean
     public AmazonS3 s3() {
         AWSCredentials awsCredentials = new BasicAWSCredentials(
-                "AKIARZD4WISKQ7W2F5KR",
-                "MiEJSK8gcu5D9VnDI7wbTdu9bGSg0KehbDSao9i7"
+                awsAccessKey,
+                awsSecretKey
         );
         return AmazonS3ClientBuilder
                 .standard()
