@@ -1,6 +1,7 @@
 package com.hendisantika.springboots3upload.datastore;
 
 import com.hendisantika.springboots3upload.profile.UserProfile;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.UUID;
  * Date: 27/03/20
  * Time: 07.49
  */
+@Service
 public class FakeUserProfileDataStore {
     private static final List<UserProfile> USER_PROFILE = new ArrayList<>();
 
@@ -24,7 +26,7 @@ public class FakeUserProfileDataStore {
         USER_PROFILE.add(new UserProfile(UUID.randomUUID(), "sakura", null));
     }
 
-    public List<UserProfile> getUserProfile() {
+    public List<UserProfile> getUserProfiles() {
         return USER_PROFILE;
     }
 }
