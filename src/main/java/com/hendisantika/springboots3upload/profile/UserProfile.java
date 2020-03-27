@@ -1,8 +1,11 @@
 package com.hendisantika.springboots3upload.profile;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -15,9 +18,15 @@ import java.util.UUID;
  * Time: 07.44
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode
 public class UserProfile {
     private UUID userProfileId;
     private String username;
     private String userProfileImageLink; // S3 key
+
+    public Optional<String> getUserProfileImageLink() {
+        return Optional.ofNullable(userProfileImageLink);
+    }
 }
